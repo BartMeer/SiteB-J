@@ -5,7 +5,6 @@ body {
     background-position: center;
     text-align: center;
     margin: 0;
-    padding: 50px;
     color: #fff; /* Set text color to white or a light color for better visibility */
     height: 100vh; /* Make the body take up the entire viewport height */
 }
@@ -20,13 +19,19 @@ p {
 
 #loveMessage {
     font-size: 18px;
-    color: #27ae60;
+    color: #000000;
     margin-top: 20px;
 }
 
 #heart {
     color: #e74c3c;
     font-size: 48px;
+    text-align: center;
+    animation: pulse 1.5s infinite;
+}
+
+#heart:hover {
+    cursor: pointer;
 }
 
 button {
@@ -37,4 +42,34 @@ button {
     border: none;
     cursor: pointer;
     margin-top: 20px;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+nav {
+    background-color: black;
+    overflow: hidden;
+}
+
+nav a {
+    float: left;
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #555;
 }
