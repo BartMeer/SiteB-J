@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="index.css" />     
+    <link rel="stylesheet" type="text/css" href="game2.css" /> 
+    <script src="game2.js"></script> 
+    <title>Game 2</title>
+
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="game1.html">game1</a>        
+        <a href="game2.html">game2</a>
+    </nav>
+
+    <h1>Random picker</h1>
+
+    <div id="leftDIV">
+      <input
+      type="text"
+      id="itemInput"
+      onkeydown="if (event.keyCode === 13) addItem()"      
+      placeholder="Items"
+      />
+      <br /><br />
+      <button onclick="addItem()">Toevoegen</button>
+      
+      <ul id="itemList">
+        <!-- List items will be added here -->
+      </ul>
+   </div>  
+   
+   <div id="centerDIV">
+    <button onclick="selectRandomItem()">Kies item</button>
+    <p id="randomItemDisplay"></p>
+    <p id="timerDisplay"></p>
+   </div>
+
+   <div id="rightDIV">    
+    <input
+      type="number"
+      id="timerDuration"
+      placeholder="Timer"
+    />   
+    <br /><br />
+    <button onclick="startCustomTimer()">Start Timer</button>
+    <br /><br />
+    <button onclick="resetTimer()">Reset Timer</button> 
+   </div>  
+
+
+    <div id="popup" class="popup">
+      <p>De tijd is op :P</p>
+      <button onclick="closePopup()">Sluiten</button>
+    </div>
+</body>
+</html>

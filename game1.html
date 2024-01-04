@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="index.css" /> 
+    <script src="index.js"></script> 
+    <title>Game 1</title>
+    <style>
+        img {
+          max-width: 60vw;
+          max-height: 60vh;
+        }
+      </style>
+</head>
+<body>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="game1.html">game1</a>        
+      <a href="game2.html">game2</a>
+    </nav>
+    
+  <h1>Random fotos</h1>
+  <button onclick="pickRandomImage()">Toon</button>
+  <br><br>
+  <img id="randomImage" src="" alt="">
+  
+  <script>
+    const images = [
+      'img/image1.jpg',
+      'img/image2.jpg',
+      'img/image3.jpg',
+      'img/image4.jpg',
+      'img/image5.jpg',
+      // Add more image URLs here
+    ];
+
+    function pickRandomImage() {
+      const randomIndex = Math.floor(Math.random() * images.length);
+      const randomImage = images[randomIndex];
+      document.getElementById('randomImage').src = randomImage;
+    }
+  </script>
+    
+
+
+</body>
+</html>
+
