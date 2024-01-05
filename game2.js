@@ -1,5 +1,6 @@
 
 
+var audio = new Audio('countdown.mp3');
 let timer;
 
 function addItem() {
@@ -48,6 +49,9 @@ function startTimer(duration) {
   timer = setInterval(function () {
     timerDisplay.textContent = "Timer: " + timerSeconds + "s";
     timerSeconds--;
+    if (timerSeconds == 2) {
+      audio.play();
+    }
     if (timerSeconds < 0) {
       clearInterval(timer);
       timerDisplay.textContent = "Timer: 0s";
@@ -61,6 +65,7 @@ function resetTimer() {
   let timerDisplay = document.getElementById("timerDisplay");
   timerDisplay.textContent = "Timer: 0s";
 }
+
 
 function openPopup() {
   let popup = document.getElementById("popup");
