@@ -9,7 +9,7 @@ function addItem() {
   const newItem = itemInput.value;
 
   if (newItem.trim() !== "") {
-    if (itemList.children.length < 10) {
+    if (itemList.children.length < 100) {
       const li = document.createElement("li");
       li.appendChild(document.createTextNode(newItem));
       const deleteButton = document.createElement("span");
@@ -55,7 +55,7 @@ function startTimer(duration) {
     if (timerSeconds < 0) {
       clearInterval(timer);
       timerDisplay.textContent = "Timer: 0s";
-      openPopup(); // Call function to display popup when timer ends
+      //openPopup(); // Call function to display popup when timer ends
     }
   }, 1000);
 }
