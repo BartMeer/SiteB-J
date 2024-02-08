@@ -75,9 +75,9 @@
 <body>
 
     <div id="container">
-        <h1>Will You Be My Valentine?</h1>
-        <button onclick="beMyValentine()">Yes</button>
-        <button onclick="showConfirm()">No</button>
+        <h1>Wil jij mijn valentijn zijn aub?</h1>
+        <button onclick="beMyValentine()">Ja</button>
+        <button onclick="showConfirm()">Nee</button>
         <div id="result"></div>
         <img id="cat-image" src="img/giphy.gif" alt="Funny Loving Cat">
       </div>
@@ -85,7 +85,7 @@
       <script>
       function beMyValentine() {
         const resultDiv = document.getElementById('result');
-        resultDiv.innerHTML = "Great! I knew you'd say yes! 😊❤️";
+        resultDiv.innerHTML = "Flink! Ge hebt chanse hoor! 😊❤️";
         document.body.classList.remove('theme-angry');
         document.getElementById('cat-image').src = 'img/confirmed.gif';
         addNewButton();
@@ -95,11 +95,11 @@
         document.body.classList.add('theme-angry');
         document.getElementById('cat-image').src = 'img/hacked.gif';
       
-        if (confirm("Are you sure you don't want to be my Valentine?")) {
+        if (confirm("Ben jij zeker, maar echt heel zeker e? :/")) {
           const resultDiv = document.getElementById('result');
-          resultDiv.innerHTML = "Connection Error: Unable to process your response. Please try again later. 💔";
+          resultDiv.innerHTML = "Connection Error: Unable to process your response. Please try again later.";
           setTimeout(function(){
-            alert("Warning: Virus Detected!\nYour heartbreak has triggered a virus on this website. Please close this window immediately to avoid further damage.");
+            alert("Warning: Virus Detected!\ heartbreak has triggered a virus on this website. Please close this window immediately to avoid further damage. And call microsoft support immediately!");
           }, 1000);
         }
       }
@@ -110,7 +110,7 @@ function addNewButton() {
   newButton.id = 'new-button';
   newButton.innerText = 'Get a Surprise!';
   newButton.onclick = function() {
-    alert("Surprise! You are my Valentine forever! ❤️");
+    alert("Surprise! Nu dat jij ja hebt gezegt gaan wij officieel trouwen want dat was eigenlijk een huwelijks contract! Proficiat!!❤️");
     window.location.href = "game1.html"; // Change this URL to the desired destination
   };
   container.appendChild(newButton);
