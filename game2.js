@@ -1,5 +1,6 @@
 
 
+var audio = new Audio('countdown.mp3');
 let timer;
 
 function addItem() {
@@ -8,7 +9,7 @@ function addItem() {
   const newItem = itemInput.value;
 
   if (newItem.trim() !== "") {
-    if (itemList.children.length < 10) {
+    if (itemList.children.length < 100) {
       const li = document.createElement("li");
       li.appendChild(document.createTextNode(newItem));
       const deleteButton = document.createElement("span");
@@ -48,10 +49,13 @@ function startTimer(duration) {
   timer = setInterval(function () {
     timerDisplay.textContent = "Timer: " + timerSeconds + "s";
     timerSeconds--;
+    if (timerSeconds == 2) {
+      audio.play();
+    }
     if (timerSeconds < 0) {
       clearInterval(timer);
       timerDisplay.textContent = "Timer: 0s";
-      openPopup(); // Call function to display popup when timer ends
+      //openPopup(); // Call function to display popup when timer ends
     }
   }, 1000);
 }
@@ -61,6 +65,7 @@ function resetTimer() {
   let timerDisplay = document.getElementById("timerDisplay");
   timerDisplay.textContent = "Timer: 0s";
 }
+
 
 function openPopup() {
   let popup = document.getElementById("popup");
