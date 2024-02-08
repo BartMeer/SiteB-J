@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Will You Be My Valentine?</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    background-color: #f7d9d9;
+    margin: 0;
+    padding: 0;
+  }
+  .theme-angry {
+    background-color: #000;
+    color: #ff6666;
+  }
+  .theme-angry button {
+    background-color: #ff6666;
+    color: #000;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+  }
+  .theme-angry button:hover {
+    background-color: #ff0000;
+    transform: translateY(-2px);
+  }
+  #container {
+    margin-top: 100px;
+  }
+  h1 {
+    color: #ff0066;
+    font-size: 28px;
+  }
+  button {
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: #ff0066;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 30px;
+    margin: 20px 10px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+  }
+  button:hover {
+    background-color: #d90052;
+    transform: translateY(-2px);
+  }
+  #result {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #333;
+  }
+  #cat-image {
+    width: 200px;
+    margin-top: 50px;
+  }
+  #new-button {
+    background-color: #ff0066;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  #new-button:hover {
+    background-color: #d90052;
+  }
+</style>
+</head>
+<body>
+
+    <div id="container">
+        <h1>Will You Be My Valentine?</h1>
+        <button onclick="beMyValentine()">Yes</button>
+        <button onclick="showConfirm()">No</button>
+        <div id="result"></div>
+        <img id="cat-image" src="img/giphy.gif" alt="Funny Loving Cat">
+      </div>
+      
+      <script>
+      function beMyValentine() {
+        const resultDiv = document.getElementById('result');
+        resultDiv.innerHTML = "Great! I knew you'd say yes! 😊❤️";
+        document.body.classList.remove('theme-angry');
+        document.getElementById('cat-image').src = 'img/confirmed.gif';
+        addNewButton();
+      }
+      
+      function showConfirm() {
+        document.body.classList.add('theme-angry');
+        document.getElementById('cat-image').src = 'img/hacked.gif';
+      
+        if (confirm("Are you sure you don't want to be my Valentine?")) {
+          const resultDiv = document.getElementById('result');
+          resultDiv.innerHTML = "Connection Error: Unable to process your response. Please try again later. 💔";
+          setTimeout(function(){
+            alert("Warning: Virus Detected!\nYour heartbreak has triggered a virus on this website. Please close this window immediately to avoid further damage.");
+          }, 1000);
+        }
+      }
+
+function addNewButton() {
+  const container = document.getElementById('container');
+  const newButton = document.createElement('button');
+  newButton.id = 'new-button';
+  newButton.innerText = 'Get a Surprise!';
+  newButton.onclick = function() {
+    alert("Surprise! You are my Valentine forever! ❤️");
+    window.location.href = "game1.html"; // Change this URL to the desired destination
+  };
+  container.appendChild(newButton);
+}
+
+// Prevent right click to disable inspect element
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+});
+// Prevent keyboard keys from triggering browser actions
+document.onkeydown = function(e) {
+  return false;
+};
+</script>
+
+</body>
+</html>
